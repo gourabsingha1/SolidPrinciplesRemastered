@@ -1,4 +1,8 @@
 package org.example.liskovsubstitution.gooddesign;
 
-public class FlyingBird {
+// Flying birds subclass
+abstract class FlyingBird extends Bird {
+    public void fly() {
+        System.out.println("Flying...");
+    }
 }

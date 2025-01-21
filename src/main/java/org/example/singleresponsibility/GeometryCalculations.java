@@ -1,4 +1,4 @@
-package org.example.singleresponsibility.operations;
+package org.example.singleresponsibility;
 
 public class GeometryCalculations {
     public double calculateAreaOfCircle(double radius) {

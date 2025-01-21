@@ -1,14 +1,15 @@
-## A class should be open for extension but closed for modification. This means you should be able to add new functionality to a class without altering its existing code.
+## A class should be open for extension but closed for modification.
+- This means you should be able to add new functionality to a class without altering its existing code.
 
-# This design is not correct because:
+# The refactored design using polymorphism adheres to OCP
 
-Frequent Extension Is Expected:
-If the application is expected to add new shapes (like Triangle, Square, etc.), this approach requires modifying the calculateArea method every time.
-Each modification increases the risk of bugs and makes the class less stable.
+# Scalability Is Required:
+- If new shapes are expected to be added (e.g., Triangle, Square), you simply create new subclasses of Shape. The AreaCalculator class does not require modification.
+- The system is open for extension (new shapes) but closed for modification (existing code remains unchanged).
 
-Violates OCP:
-Adding a new shape (e.g., Triangle) is not possible without changing the existing method.
-The class is not closed for modification because changes to requirements will directly impact the AreaCalculator class.
+# Adheres to OCP:
+- You don’t need to modify the AreaCalculator class when new shapes are introduced. Each shape class is self-contained.
 
-Complexity Grows:
-As more shapes are added, the if-else structure grows, making the method harder to maintain and understand.
+# Promotes Reusability and Maintainability:
+- The Shape hierarchy allows reusing the area calculation logic independently for each shape.
+- Individual shapes are easier to test and debug.

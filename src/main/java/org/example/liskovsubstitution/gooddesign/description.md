@@ -1,8 +1,12 @@
-## The Liskov Substitution Principle (LSP) states that subtypes must be substitutable for their base types without affecting the correctness of the program. This principle ensures that polymorphism works as expected, promoting consistent behavior.
+## The Liskov Substitution Principle (LSP) states that subtypes must be substitutable for their base types without affecting the correctness of the program.
+- This principle ensures that polymorphism works as expected, promoting consistent behavior.
 
-# Violation of LSP:
-- Penguin cannot fulfill the contract of Bird, as it overrides the fly method to throw an exception.
-- The behavior of Bird is inconsistent when replaced by a Penguin.
+# Subtypes Maintain Behavior:
+- Sparrow and Penguin can replace Bird without causing unexpected results or breaking functionality.
 
-# Incorrect Abstraction:
-- The base class Bird assumes all birds can fly, which is not true for some subclasses like Penguin.
+# Polymorphism Works as Expected:
+- Code relying on Bird (e.g., the main method) does not need to know whether it’s dealing with a Sparrow or a Penguin.
+- The Bird class no longer assumes that all birds can fly. The behavior for movement is generalized through the move method, and FlyingBird specializes it for flying birds.
+
+# Extensible Design:
+- Adding new bird types (e.g., Ostrich or Hummingbird) can be done without altering existing behavior.

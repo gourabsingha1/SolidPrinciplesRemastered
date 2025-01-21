@@ -1,4 +1,5 @@
 package org.example.openclosed.gooddesign;
 
-public class Shape {
+abstract class Shape {
+    public abstract double calculateArea();
 }

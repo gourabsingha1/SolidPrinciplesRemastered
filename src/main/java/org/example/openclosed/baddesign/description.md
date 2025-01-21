@@ -1,30 +1,13 @@
-## A class should be open for extension but closed for modification. This means you should be able to add new functionality to a class without altering its existing code.
+## A class should be open for extension but closed for modification.
+- This means you should be able to add new functionality to a class without altering its existing code.
 
-The Single Responsibility Principle (SRP) does not mean a class should have only one function. Instead, it means a class should have only one reason to change, meaning it should be responsible for a single functionality or cohesive set of behaviors.
+# Frequent Extension Is Expected:
+- If the application is expected to add new shapes (like Triangle, Square, etc.), this approach requires modifying the calculateArea method every time.
+Each modification increases the risk of bugs and makes the class less stable.
 
-In the examples provided:
+# Violates OCP:
+- Adding a new shape (e.g., Triangle) is not possible without changing the existing method.
+The class is not closed for modification because changes to requirements will directly impact the AreaCalculator class.
 
-# ArithmeticOperations:
-This class has one responsibility: performing basic arithmetic operations.
-While it has multiple methods (add, subtract, multiply, divide), they all belong to the cohesive group of arithmetic operations.
-If there is a change to arithmetic logic (e.g., adding new operations or optimizing existing ones), only this class is impacted.
-
-# GeometryCalculations:
-This class handles geometric calculations like computing the area of a circle or the perimeter of a rectangle.
-The methods are tightly related because they all perform geometric calculations.
-Changes to geometric logic would impact only this class.
-
-# When is it Correct?
-A class can have multiple methods as long as:
-- The methods are part of the same responsibility or functionality.
-- The class has only one reason to change, which aligns with its responsibility.
-
-# When is it Incorrect?
-It becomes a violation of SRP if the methods cater to different responsibilities. For example:
-
-class Calculator {
-    public double add(double a, double b) { ... }  // Arithmetic
-    public double calculateAreaOfCircle(double radius) { ... }  // Geometry
-    public void saveToFile(String result) { ... }  // File handling
-}
-Here, the Calculator class handles arithmetic, geometry, and file-saving, which are unrelated responsibilities.
+# Complexity Grows:
+- As more shapes are added, the if-else structure grows, making the method harder to maintain and understand.

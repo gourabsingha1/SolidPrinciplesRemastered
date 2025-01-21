@@ -1,4 +1,7 @@
 package org.example.openclosed.gooddesign;
 
-public class AreaCalculator {
+class AreaCalculator {
+    public double calculateArea(Shape shape) {
+        return shape.calculateArea();
+    }
 }

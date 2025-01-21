@@ -1,7 +1,6 @@
-package org.example.liskovsubstitution.baddesign;
+package org.example.liskovsubstitution.gooddesign;
 
-class Bird {
-    public void fly() {
-        System.out.println("Flying...");
-    }
+// Base class for all birds
+abstract class Bird {
+    public abstract void move();
 }

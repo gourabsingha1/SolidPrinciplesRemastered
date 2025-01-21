@@ -1,4 +1,7 @@
 package org.example.liskovsubstitution.baddesign;
 
-public class Bird {
+class Bird {
+    public void fly() {
+        System.out.println("Flying...");
+    }
 }
